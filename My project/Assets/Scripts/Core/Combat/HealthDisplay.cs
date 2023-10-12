@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class HealthDisplay : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private Health health;
+    [SerializeField] private PlayerHealth health;
     [SerializeField] private Image healthBarImage;
     [SerializeField] private TMP_Text healthBarText;
 
@@ -23,7 +23,7 @@ public class HealthDisplay : MonoBehaviour
     }
 
 
-    private void HandleHealthChange(Health health)
+    private void HandleHealthChange(PlayerHealth health)
     {
         healthBarImage.fillAmount = (float)health.CurrentHealth / health.MaxHealth;
         healthBarImage.color = healthBarColour.Evaluate((float)health.CurrentHealth / health.MaxHealth);

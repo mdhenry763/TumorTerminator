@@ -1,15 +1,15 @@
 using System;
 using UnityEngine;
 
-public class Health : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
     [field: SerializeField] public int MaxHealth { get; private set; } = 100;
     [field: SerializeField] public int CurrentHealth { get; private set; } = 100;
 
     private bool isDead;
 
-    public Action<Health> OnDie;
-    public event Action<Health> OnHealthChange;
+    public Action<PlayerHealth> OnDie;
+    public event Action<PlayerHealth> OnHealthChange;
 
 
     public void TakeDamage(int dmg)
