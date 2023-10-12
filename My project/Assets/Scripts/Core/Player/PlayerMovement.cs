@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Settings: ")]
     [SerializeField] float defaultMoveSpeed = 7f;
     [SerializeField] float defaultTurnRate = 180f;
+    [SerializeField] float UpAndDownValue = 2f;
 
     private Vector3 previousMovementInput;
     private Vector3 previousLookInput;
@@ -40,24 +41,17 @@ public class PlayerMovement : MonoBehaviour
     {
         HandlePlayerMove();
         HandlePlayerLook();
-
-        Vector3 playerPos = transform.position;
-        playerPos.y = 0;
-        transform.position = playerPos;
-
     }
 
     //Subscription to OnMoveEvent
     private void HandlePlayerMoveInput(Vector2 moveInput)
     {
-        Debug.Log("Move Input");
         previousMovementInput = new Vector3(moveInput.x, 0, moveInput.y);
 
     }
 
     private void HandlePlayerLookInput(Vector2 lookInput)
     {
-        Debug.Log("Look Input");
         previousLookInput = new Vector3(lookInput.x, 0, lookInput.y);
     }
 
@@ -78,12 +72,22 @@ public class PlayerMovement : MonoBehaviour
 
         //Left and right rotation
         Vector3 yRotation = new Vector3(0, previousLookInput.x, 0);
-        Vector3 xRotation = new Vector3(previousLookInput.y, 0, 0);
 
-        if(previousLookInput.sqrMagnitude > 0) 
+        if (previousLookInput.sqrMagnitude > 0) 
         {
             transform.Rotate(yRotation * 2);
-        }
-        
+        }  
+    }
+
+    public void MoveUp()
+    {
+        Vector3 moveUpPos = new Vector3(0, UpAndDownValue, 0);
+        transform.Translate(moveUpPos);
+    }
+
+    public void MoveDown()
+    {
+        Vector3 moveUpPos = new Vector3(0, -UpAndDownValue, 0);
+        transform.Translate(moveUpPos);
     }
 }
