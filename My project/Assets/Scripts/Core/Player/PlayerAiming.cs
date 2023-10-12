@@ -15,7 +15,14 @@ public class PlayerAiming : MonoBehaviour
     [SerializeField] private RectTransform crosshairTransform; 
     [SerializeField] private float crosshairSpeed = 50f;
 
+    [Header("Weapon Aiming Settings:")]
+    [SerializeField] private Transform weaponTransform; // The transform of your weapon
+    [SerializeField] private Camera mainCamera; // Your main camera (usually the player's camera)
+
     private Vector3 previousLookInput;
+
+
+    
 
     private void OnEnable()
     {
@@ -29,6 +36,7 @@ public class PlayerAiming : MonoBehaviour
 
     private void Update()
     {
+        AimWeaponAtCursor();
         HandlePlayerLook();
     }
 
@@ -36,6 +44,22 @@ public class PlayerAiming : MonoBehaviour
     {
         Debug.Log("Look Input");
         previousLookInput = new Vector3(lookInput.x, 0, lookInput.y);
+    }
+
+    void AimWeaponAtCursor()
+    {
+        // Create a ray from the camera through the cursor's position
+        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit))
+        {
+            // Determine the direction to aim the weapon
+            Vector3 aimDirection = hit.point - weaponTransform.position;
+            aimDirection.y = 0;
+            aimDirection.z = 0;
+            weaponTransform.forward = aimDirection;
+        }
     }
 
     private void HandlePlayerLook()
