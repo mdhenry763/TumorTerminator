@@ -34,6 +34,7 @@ public class AIController : MonoBehaviour
         if (distanceToPlayer < attackRange)
         {
             // Attack the player (implement your attack logic here).
+            // Call IEnumerable "dealDMG" with reference to health - similar to how it's done elsewhere.
         }
         else if (distanceToPlayer < chaseRange)
         {
