@@ -4,17 +4,10 @@
     <list default="true" id="34d7ac36-0a36-4a42-abc9-c0eed6bb432a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.My project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.My project/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Caden's Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Caden's Scene.unity" afterDir="false" />
-<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/PlayerTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PlayerTest.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/AI/AIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/AI/AIController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Player/CadenMovement.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Player/CadenMovement.cs.meta" beforeDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/AI/AIController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/AI/AIController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
->>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,11 +88,7 @@
       <workItem from="1697125104535" duration="2004000" />
       <workItem from="1697127891291" duration="51000" />
       <workItem from="1697128358601" duration="1675000" />
-<<<<<<< Updated upstream
       <workItem from="1697185413383" duration="819000" />
-=======
-      <workItem from="1697193715246" duration="3151000" />
->>>>>>> Stashed changes
     </task>
     <servers />
   </component>
