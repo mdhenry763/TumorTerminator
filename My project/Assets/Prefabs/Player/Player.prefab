@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4937690724750762358}
   - component: {fileID: 1944835683042784515}
   - component: {fileID: 1669613479556555295}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 5025695985560849601}
   - component: {fileID: 5094516006457842925}
   - component: {fileID: 5775096310997011902}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,7 +219,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 131535020700466795}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ProjectileSP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -256,7 +256,7 @@ GameObject:
   - component: {fileID: 8559852826988256935}
   - component: {fileID: 1684882468888621337}
   - component: {fileID: 1561667092455994566}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -443,7 +443,7 @@ GameObject:
   - component: {fileID: 8897473764794718912}
   - component: {fileID: 5211468506635064230}
   - component: {fileID: 7072776014968778385}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TestCapsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -529,7 +529,7 @@ GameObject:
   - component: {fileID: 143266824745894617}
   - component: {fileID: 3253983942290572608}
   - component: {fileID: 6915182320935349635}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -631,7 +631,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 586256581818560263}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -663,7 +663,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5448622766688367707}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -696,7 +696,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7467512002884469931}
   - component: {fileID: 1805471637985173193}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FollowCam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -770,7 +770,7 @@ GameObject:
   - component: {fileID: 2408073257720574322}
   - component: {fileID: 6644055114256181691}
   - component: {fileID: 4739575228704007460}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
