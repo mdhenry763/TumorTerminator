@@ -4,14 +4,24 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
-public class AIController : MonoBehaviour
+public class WhiteBloodCellAI : MonoBehaviour
 {
+    [Header("References")]
+    [SerializeField] private PlayerHealth health;
+    
     public float patrolSpeed = 2.0f;
     public float chaseSpeed = 4.0f;
     public float patrolWaitTime = 2.0f;
     public float chaseRange = 10.0f;
+    
     public float attackRange = 2.0f;
+<<<<<<< Updated upstream:My project/Assets/Scripts/Core/AI/AIController.cs
     public float attackCooldown = 2.0f; //Attack cooldown in seconds for enemy.
+=======
+    public float attackCooldown = 2.0f;
+    public int attackDamage = 5;
+    public bool isAttacking = false;
+>>>>>>> Stashed changes:My project/Assets/Scripts/Core/AI/WhiteBloodCellAI.cs
 
     private Transform player;
     private NavMeshAgent navMeshAgent;
@@ -34,7 +44,15 @@ public class AIController : MonoBehaviour
 
         if (distanceToPlayer < attackRange)
         {
+<<<<<<< Updated upstream:My project/Assets/Scripts/Core/AI/AIController.cs
             DealDMG();
+=======
+            if (isAttacking == false)
+            {
+                isAttacking = true;
+                StartCoroutine(DealDMG());
+            }
+>>>>>>> Stashed changes:My project/Assets/Scripts/Core/AI/WhiteBloodCellAI.cs
         }
         else if (distanceToPlayer < chaseRange)
         {
@@ -73,6 +91,13 @@ public class AIController : MonoBehaviour
 
     IEnumerator DealDMG()
     {
+<<<<<<< Updated upstream:My project/Assets/Scripts/Core/AI/AIController.cs
         yield return new WaitForSeconds(attackCooldown);
+=======
+        health.TakeDamage(attackDamage);
+        yield return new WaitForSeconds(attackCooldown);
+        isAttacking = false;
+        
+>>>>>>> Stashed changes:My project/Assets/Scripts/Core/AI/WhiteBloodCellAI.cs
     }
 }
