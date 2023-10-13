@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
-public class AIController : MonoBehaviour
+public class WhiteBloodCellAI : MonoBehaviour
 {
     public float patrolSpeed = 2.0f;
     public float chaseSpeed = 4.0f;
