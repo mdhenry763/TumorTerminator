@@ -26,6 +26,7 @@ public class PlayerAiming : MonoBehaviour
 
 
     private Vector3 previousLookInput;
+    private bool isFiring;
     private Camera mainCamera;
     private float initialCameraYOffset;
 

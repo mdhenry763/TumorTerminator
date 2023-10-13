@@ -67,5 +67,10 @@ public class TesticleManualController : MonoBehaviour
         manualScreen3.SetActive(true);
     }
 
+    public void PromptPlayer(string propmt)
+    {
+
+    }
+
     
 }
