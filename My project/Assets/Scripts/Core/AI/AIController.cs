@@ -11,7 +11,6 @@ public class AIController : MonoBehaviour
     public float patrolWaitTime = 2.0f;
     public float chaseRange = 10.0f;
     public float attackRange = 2.0f;
-    public float attackCooldown = 2.0f; //Attack cooldown in seconds for enemy.
 
     private Transform player;
     private NavMeshAgent navMeshAgent;
@@ -34,7 +33,8 @@ public class AIController : MonoBehaviour
 
         if (distanceToPlayer < attackRange)
         {
-            DealDMG();
+            // Attack the player (implement your attack logic here).
+            // Call IEnumerable "dealDMG" with reference to health - similar to how it's done elsewhere.
         }
         else if (distanceToPlayer < chaseRange)
         {
@@ -69,10 +69,5 @@ public class AIController : MonoBehaviour
         float randomX = UnityEngine.Random.Range(-10f, 10f);
         float randomZ = UnityEngine.Random.Range(-10f, 10f);
         return new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
-    }
-
-    IEnumerator DealDMG()
-    {
-        yield return new WaitForSeconds(attackCooldown);
     }
 }
