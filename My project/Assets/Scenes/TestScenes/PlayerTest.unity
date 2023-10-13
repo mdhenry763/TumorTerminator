@@ -1889,7 +1889,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1813552978}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.11772253, y: 0.03566232, z: -0.004230422, w: 0.99239695}
+  m_LocalRotation: {x: 0.11772253, y: 0.035662297, z: -0.0042304196, w: 0.99239695}
   m_LocalPosition: {x: 0, y: 3.74, z: -6.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2254,39 +2254,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2489282896143421707, guid: 05c690d9c7331c7419bf8fc3df58129e,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2489282896143421707, guid: 05c690d9c7331c7419bf8fc3df58129e,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2489282896143421707, guid: 05c690d9c7331c7419bf8fc3df58129e,
-        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 255125519}
-    - target: {fileID: 2489282896143421707, guid: 05c690d9c7331c7419bf8fc3df58129e,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2489282896143421707, guid: 05c690d9c7331c7419bf8fc3df58129e,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnPauseClick
-      objectReference: {fileID: 0}
-    - target: {fileID: 2489282896143421707, guid: 05c690d9c7331c7419bf8fc3df58129e,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PauseMenu, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2489282896143421707, guid: 05c690d9c7331c7419bf8fc3df58129e,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 2683441039577923273, guid: 05c690d9c7331c7419bf8fc3df58129e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2335,20 +2305,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4507098603912339263, guid: d317a36cd668ef94b8e0b6cd218d2963,
-        type: 3}
-      propertyPath: UpAndDownForce
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 7467512002884469931, guid: d317a36cd668ef94b8e0b6cd218d2963,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.03566232
+      value: 0.035662297
       objectReference: {fileID: 0}
     - target: {fileID: 7467512002884469931, guid: d317a36cd668ef94b8e0b6cd218d2963,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.004230422
+      value: -0.0042304196
       objectReference: {fileID: 0}
     - target: {fileID: 8440016896978384406, guid: d317a36cd668ef94b8e0b6cd218d2963,
         type: 3}

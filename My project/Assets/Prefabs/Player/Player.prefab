@@ -325,7 +325,7 @@ MonoBehaviour:
   inputReader: {fileID: 11400000, guid: 1a9780770620c17478284a39212ea9bd, type: 2}
   rb: {fileID: 838829246796739417}
   defaultMoveSpeed: 7
-  UpAndDownForce: 5
+  UpAndDownForce: 10
 --- !u!114 &8559852826988256935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -727,7 +727,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7506893702850467047}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.11772253, y: 0.03566232, z: -0.004230422, w: 0.99239695}
+  m_LocalRotation: {x: 0.11772253, y: 0.035662297, z: -0.0042304196, w: 0.99239695}
   m_LocalPosition: {x: 0, y: 3.74, z: -6.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
