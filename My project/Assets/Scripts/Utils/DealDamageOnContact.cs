@@ -7,10 +7,14 @@ public class DealDamageOnContact : MonoBehaviour
     private void OnTriggerEnter(Collider col)
     {
         Debug.Log(col.gameObject.name);
-        if(col.CompareTag("Enemy"))
-        {
-            Debug.Log("Projectile has hit enemy");
-        }
+
+        //TryGet enemy health script
+
+
+        //if(col.CompareTag("Enemy"))
+        //{
+        //    Debug.Log("Projectile has hit enemy");
+        //}
 
     }
 }

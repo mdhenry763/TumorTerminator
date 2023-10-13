@@ -1,5 +1,6 @@
 using UnityEngine;
 using Cinemachine;
+using System.Collections;
 
 public class PlayerAiming : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class PlayerAiming : MonoBehaviour
     [SerializeField] private GameObject projectilePrefab; // Prefab for the projectile
     [SerializeField] private Transform projectileSpawnPoint; // Point where the projectile will be spawned, e.g., the weapon's muzzle
     [SerializeField] private float projectileSpeed = 20f; // Speed of the projectile
+    [SerializeField] private float shootDelay = 0.5f;
 
 
     private Vector3 previousLookInput;
@@ -77,6 +79,8 @@ public class PlayerAiming : MonoBehaviour
 
     void ShootProjectile()
     {
+        if (isFiring) return;
+
         Ray ray = mainCamera.ScreenPointToRay(crosshairTransform.position);
         RaycastHit hit;
         Vector3 targetPoint;
@@ -93,6 +97,7 @@ public class PlayerAiming : MonoBehaviour
         // Calculate the shoot direction
         Vector3 shootDirection = (targetPoint - projectileSpawnPoint.position).normalized;
 
+
         // Instantiate the projectile and shoot it in the determined direction
         GameObject projectileInstance = Instantiate(projectilePrefab, projectileSpawnPoint.position, Quaternion.identity);
         Rigidbody projectileRb = projectileInstance.GetComponent<Rigidbody>();
@@ -100,5 +105,15 @@ public class PlayerAiming : MonoBehaviour
         {
             projectileRb.velocity = shootDirection * projectileSpeed;
         }
+        isFiring = true;
+        StartCoroutine(FireDelay());
+
+    }
+
+    private IEnumerator FireDelay()
+    {
+        yield return new WaitForSeconds(shootDelay);
+
+        isFiring = false;   
     }
 }

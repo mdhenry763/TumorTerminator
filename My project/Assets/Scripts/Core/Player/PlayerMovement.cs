@@ -11,7 +11,6 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Settings: ")]
     [SerializeField] float defaultMoveSpeed = 7f;
-    [SerializeField] float defaultTurnRate = 180f;
     [SerializeField] float UpAndDownForce = 50f;
 
     private Vector3 previousMovementInput;
@@ -59,9 +58,6 @@ public class PlayerMovement : MonoBehaviour
     private void HandlePlayerMove()
     {
         //Move player based on previous movement input
-        // rb.velocity = previousMovementInput * currentMoveSpeed;
-
-        //If there is move input then rotate player
         Vector3 moveDirection = transform.TransformDirection(previousMovementInput);
         transform.position += moveDirection * currentMoveSpeed * Time.deltaTime;
     }
