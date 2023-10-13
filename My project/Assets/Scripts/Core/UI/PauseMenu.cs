@@ -27,6 +27,6 @@ public class PauseMenu : MonoBehaviour
         pauseScreen.SetActive(false);
         paused = false;
         Time.timeScale = 1f;
-        //SceneManager.LoadScene("Main Menu");
+        LevelLoader.Instance.LoadLevel(SceneNames.MainMenu);
     }
 }
