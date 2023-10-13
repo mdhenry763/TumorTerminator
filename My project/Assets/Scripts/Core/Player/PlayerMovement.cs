@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Settings: ")]
     [SerializeField] float defaultMoveSpeed = 7f;
     [SerializeField] float defaultTurnRate = 180f;
-    [SerializeField] float UpAndDownValue = 2f;
+    [SerializeField] float UpAndDownForce = 50f;
 
     private Vector3 previousMovementInput;
     private Vector3 previousLookInput;
@@ -81,13 +81,13 @@ public class PlayerMovement : MonoBehaviour
 
     public void MoveUp()
     {
-        Vector3 moveUpPos = new Vector3(0, UpAndDownValue, 0);
-        transform.Translate(moveUpPos);
+        Vector3 upForce = transform.up * UpAndDownForce;
+        rb.AddForce(upForce, ForceMode.Impulse);
     }
 
     public void MoveDown()
     {
-        Vector3 moveUpPos = new Vector3(0, -UpAndDownValue, 0);
-        transform.Translate(moveUpPos);
+        Vector3 downForce = -transform.up * UpAndDownForce;
+        rb.AddForce(downForce, ForceMode.Impulse);
     }
 }
