@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,13 +14,32 @@ public enum LevelStage
 public class LevelManager : MonoBehaviour
 {
     public LevelStage CurrentStage { get; private set; }
+    public int LevelNum { get; private set; }
 
+    [Header("Level Managemenet")]
+    [SerializeField] private LevelSO[] levelSettings;
+
+    //Events
+    public event Action OnLevelComplete;
+
+    //Local
     private EventManager eventManager;
+
+    private int numLumpsKilled;
+    private int numCancerCellsKilled;
+
+    private bool allLumpsKilled;
+    private bool allCancerCellsKilled;
+    private bool mainCancerCellKilled;
+    private bool isLevelComplete;
 
     private void Start()
     {
         CurrentStage = LevelStage.Testicles;
         eventManager = EventManager.Instance;
+
+        numLumpsKilled = 0;
+        numCancerCellsKilled = 0;
     }
 
     //
@@ -48,22 +68,45 @@ public class LevelManager : MonoBehaviour
     //Events
     private void HandleMainCellKilled()
     {
-        //Prompt the player to go to next scene
+        mainCancerCellKilled = true;
+        CheckIfLevelDone();
     }
 
     private void HandleLumpKilled()
     {
         //Check how many lumps left
+        numLumpsKilled++;
+
+        if(numLumpsKilled >= levelSettings[LevelNum].numLumps)
+        {
+            allLumpsKilled = true;
+            CheckIfLevelDone();
+        }
     }
 
     private void HandleCancerCellKilled()
     {
         //Check how many cancer cells left
+        numCancerCellsKilled++;
+
+        if(numCancerCellsKilled >= levelSettings[LevelNum].numCancerCells)
+        {
+            allCancerCellsKilled = true;
+            CheckIfLevelDone();
+        }
     }
 
     private void HandleSceneChange()
     {
         //Load next scene
+        if(isLevelComplete)
+        {
+            LevelNum++;
+            LevelStage stage = (LevelStage)LevelNum;
+            ChangeStage(stage);
+            ResetLevel();
+        }
+        
     }
 
     private void HandleManualRead()
@@ -76,8 +119,30 @@ public class LevelManager : MonoBehaviour
         //Prompt player to look and manual
     }
 
+    //Methods
 
-    public void ChangeStage(LevelStage stage)
+    private void CheckIfLevelDone()
+    {
+        if(CurrentStage == LevelStage.Testicles)
+        {
+            if(allCancerCellsKilled && allLumpsKilled && mainCancerCellKilled)
+            {
+                isLevelComplete = true;
+                OnLevelComplete?.Invoke();
+            }
+        }
+    }
+
+    private void ResetLevel()
+    {
+        allCancerCellsKilled = false;
+        allLumpsKilled = false;
+        mainCancerCellKilled = false;
+        isLevelComplete = false;
+    }
+
+
+    private void ChangeStage(LevelStage stage)
     {
         CurrentStage = stage;
     }
