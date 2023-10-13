@@ -8,13 +8,11 @@ public class DealDamageOnContact : MonoBehaviour
     {
         Debug.Log(col.gameObject.name);
 
-        //TryGet enemy health script
-
-
-        //if(col.CompareTag("Enemy"))
-        //{
-        //    Debug.Log("Projectile has hit enemy");
-        //}
+        if(col.TryGetComponent<EnemyHealth>(out EnemyHealth enemyHealth))
+        {
+            Debug.Log("Damage Dealt to enemies: " + damage);
+            enemyHealth.TakeDamage(damage);
+        }
 
     }
 }
