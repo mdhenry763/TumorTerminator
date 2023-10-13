@@ -6,11 +6,17 @@ using UnityEngine;
 using UnityEngine.AI;
 public class WhiteBloodCellAI : MonoBehaviour
 {
+    [Header("References")]
+    [SerializeField] private PlayerHealth health;
+    
     public float patrolSpeed = 2.0f;
     public float chaseSpeed = 4.0f;
     public float patrolWaitTime = 2.0f;
     public float chaseRange = 10.0f;
     public float attackRange = 2.0f;
+    public float attackCooldown = 2.0f;
+    public bool isAttacking = false;
+    public int damage = 5;
 
     private Transform player;
     private NavMeshAgent navMeshAgent;
@@ -33,17 +39,22 @@ public class WhiteBloodCellAI : MonoBehaviour
 
         if (distanceToPlayer < attackRange)
         {
-            // Attack the player (implement your attack logic here).
-            // Call IEnumerable "dealDMG" with reference to health - similar to how it's done elsewhere.
+            if (isAttacking == false)
+            {
+                StartCoroutine(DealDMG());
+                isAttacking = true;
+            }
         }
         else if (distanceToPlayer < chaseRange)
         {
+            Debug.Log("Not In Range");
             isChasing = true;
             navMeshAgent.speed = chaseSpeed;
             navMeshAgent.SetDestination(player.position);
         }
         else
         {
+            Debug.Log("Not In Range");
             isChasing = false;
 
             if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance < 0.5f)
@@ -69,5 +80,12 @@ public class WhiteBloodCellAI : MonoBehaviour
         float randomX = UnityEngine.Random.Range(-10f, 10f);
         float randomZ = UnityEngine.Random.Range(-10f, 10f);
         return new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+    }
+
+    IEnumerator DealDMG()
+    {
+        yield return new WaitForSeconds(attackCooldown);
+        health.TakeDamage(damage);
+        isAttacking = false;
     }
 }
