@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class TesticleManualController : MonoBehaviour
 {
@@ -11,6 +13,10 @@ public class TesticleManualController : MonoBehaviour
     public GameObject manualScreen4;
     public static bool manualActive;
 
+    [Header("Player Prompt")]
+    [SerializeField] private GameObject promptScreen;
+    [SerializeField] private TMP_Text promptText;
+
     public void Start()
     {
         manualActive = false;
@@ -18,7 +24,8 @@ public class TesticleManualController : MonoBehaviour
 
     public void OnManualButtonClick()
     {
-        Time.timeScale = 0f;
+        SetTimeScale(0);
+        promptScreen.SetActive(false);
         manualScreen1.SetActive(true);
     }
 
@@ -56,9 +63,12 @@ public class TesticleManualController : MonoBehaviour
 
     public void OnDoneManualClick()
     {
-        manualScreen4.SetActive(false);
+        //manualScreen4.SetActive(false);
+        //For testing @Dylan
+        manualScreen1.SetActive(false) ;
         manualActive = false;
-        Time.timeScale = 1f;
+        EventManager.Instance.ManualReadEvent();
+        SetTimeScale(1);
     }
 
     public void OnBackManual4Click()
@@ -67,10 +77,28 @@ public class TesticleManualController : MonoBehaviour
         manualScreen3.SetActive(true);
     }
 
-    public void PromptPlayer(string propmt)
+    public void PromptPlayer(string propmt, bool pauseGame)
     {
+        promptScreen.SetActive(true);
+        promptText.text = propmt;
+        if (pauseGame)
+        {
+            SetTimeScale(0);
+        }
+        else StartCoroutine(ShowItemFor(5, promptScreen));
+        
+    }
+
+    private void SetTimeScale(float scale)
+    {
+        Time.timeScale = scale;
+    }
+
+    IEnumerator ShowItemFor(float lifetime, GameObject obj)
+    {
+        yield return new WaitForSeconds(lifetime);
+        obj.SetActive(false);
 
     }
 
-    
 }

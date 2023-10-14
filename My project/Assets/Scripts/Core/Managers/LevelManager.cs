@@ -19,12 +19,17 @@ public class LevelManager : MonoBehaviour
     [Header("Level Managemenet")]
     [SerializeField] private LevelSO[] levelSettings;
 
-    //Events
+    [Header("References")]
+    [SerializeField] private TesticleManualController manualController;
+    [SerializeField] private EnemyManager enemyManager;
+
+    //Events- place in event manager, just for testing
     public event Action OnLevelComplete;
 
     //Local
     private EventManager eventManager;
 
+    private int cancerCellsInLevel;
     private int numLumpsKilled;
     private int numCancerCellsKilled;
 
@@ -36,22 +41,24 @@ public class LevelManager : MonoBehaviour
     private void Start()
     {
         CurrentStage = LevelStage.Testicles;
-        eventManager = EventManager.Instance;
+        
 
         numLumpsKilled = 0;
         numCancerCellsKilled = 0;
+        cancerCellsInLevel = enemyManager.GetNumCancerCells();
     }
 
     //
     private void OnEnable()
     {
+        eventManager = EventManager.Instance;
         //Subscribe to events
         eventManager.OnLevelStart += HandleLevelStarting;
         eventManager.OnManualRead += HandleManualRead;
         eventManager.OnSceneChange += HandleSceneChange;
-        eventManager.OnCancerCellKilled += HandleCancerCellKilled;
+        //eventManager.OnCancerCellKilled += HandleCancerCellKilled;
         eventManager.OnLumpKilled += HandleLumpKilled;
-        eventManager.OnMainCancerCellDetected += HandleMainCellKilled;
+        eventManager.OnMainCancerCellDetected += HandleMainCellDetected;
     }
 
     private void OnDisable()
@@ -60,15 +67,16 @@ public class LevelManager : MonoBehaviour
         eventManager.OnLevelStart -= HandleLevelStarting;
         eventManager.OnManualRead -= HandleManualRead;
         eventManager.OnSceneChange -= HandleSceneChange;
-        eventManager.OnCancerCellKilled -= HandleCancerCellKilled;
+        //eventManager.OnCancerCellKilled -= HandleCancerCellKilled;
         eventManager.OnLumpKilled -= HandleLumpKilled;
-        eventManager.OnMainCancerCellDetected -= HandleMainCellKilled;
+        eventManager.OnMainCancerCellDetected -= HandleMainCellDetected;
     }
 
     //Events
-    private void HandleMainCellKilled()
+    private void HandleMainCellDetected()
     {
         mainCancerCellKilled = true;
+        enemyManager.SetCancerCellsActive();
         CheckIfLevelDone();
     }
 
@@ -76,25 +84,26 @@ public class LevelManager : MonoBehaviour
     {
         //Check how many lumps left
         numLumpsKilled++;
+        Debug.Log("Lump Killed");
 
-        if(numLumpsKilled >= levelSettings[LevelNum].numLumps)
+        if(numLumpsKilled >= cancerCellsInLevel)
         {
             allLumpsKilled = true;
             CheckIfLevelDone();
         }
     }
 
-    private void HandleCancerCellKilled()
-    {
-        //Check how many cancer cells left
-        numCancerCellsKilled++;
+    //private void HandleCancerCellKilled()
+    //{
+    //    //Check how many cancer cells left
+    //    numCancerCellsKilled++;
 
-        if(numCancerCellsKilled >= levelSettings[LevelNum].numCancerCells)
-        {
-            allCancerCellsKilled = true;
-            CheckIfLevelDone();
-        }
-    }
+    //    if(numCancerCellsKilled >= levelSettings[LevelNum].numCancerCells)
+    //    {
+    //        allCancerCellsKilled = true;
+    //        CheckIfLevelDone();
+    //    }
+    //}
 
     private void HandleSceneChange()
     {
@@ -112,11 +121,13 @@ public class LevelManager : MonoBehaviour
     private void HandleManualRead()
     {
         //prompt player to find enemies
+        manualController.PromptPlayer("Find the cancer cell", false);
     }
 
     private void HandleLevelStarting()
     {
         //Prompt player to look and manual
+        manualController.PromptPlayer("Look at the manual to identify the testicle cancer", true);
     }
 
     //Methods
@@ -125,9 +136,10 @@ public class LevelManager : MonoBehaviour
     {
         if(CurrentStage == LevelStage.Testicles)
         {
-            if(allCancerCellsKilled && allLumpsKilled && mainCancerCellKilled)
+            if(allLumpsKilled)
             {
                 isLevelComplete = true;
+                manualController.PromptPlayer("Go to next body part", false);
                 OnLevelComplete?.Invoke();
             }
         }

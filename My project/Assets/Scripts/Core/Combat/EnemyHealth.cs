@@ -15,7 +15,7 @@ public class EnemyHealth : MonoBehaviour
 
         if (Health <= 0 )
         {
-            OnEnemyDeath?.Invoke();
+            EventManager.Instance.LumpKilledEvent();
             gameObject.SetActive(false);
         }
     }

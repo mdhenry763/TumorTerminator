@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac4364f5bc51bbe49a91807fd289b4fa, type: 3}
   m_Name: TesticleLevel
   m_EditorClassIdentifier: 
-  numCancerCells: 0
-  numLumps: 0
+  numCancerCells: 10
+  numLumps: 15
   manualInterface: {fileID: 0}
