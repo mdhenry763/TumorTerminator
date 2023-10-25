@@ -7,7 +7,9 @@ public enum SceneNames
 { 
     MainMenu,
     Intro,
-    Game
+    Testicles,
+    Lungs,
+    Brain
 }
 
 
