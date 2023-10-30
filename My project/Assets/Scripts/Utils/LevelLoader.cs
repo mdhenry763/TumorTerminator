@@ -7,7 +7,7 @@ public enum SceneNames
 { 
     MainMenu,
     Intro,
-    Testicles,
+    Testicle,
     Lungs,
     Brain
 }
@@ -22,13 +22,14 @@ public class LevelLoader : Singleton<LevelLoader>
     {
         Debug.Log(sceneName.ToString());
         currentScene = sceneName;
-        SceneManager.LoadScene(sceneName.ToString());
+        SceneManager.LoadSceneAsync(sceneName.ToString());
     }
 
     public void LoadNextScene()
     {
         int sceneNum = (int)currentScene;
         sceneNum++;
+        currentScene = (SceneNames)sceneNum;
         SceneManager.LoadScene(sceneNum);
     }
 }

@@ -77,6 +77,7 @@ public class LevelManager : MonoBehaviour
     {
         mainCancerCellKilled = true;
         enemyManager.SetCancerCellsActive();
+        manualController.PromptPlayer("Eradicate all the cancer cells, using your cannon launcher", false);
         CheckIfLevelDone();
     }
 
@@ -121,7 +122,7 @@ public class LevelManager : MonoBehaviour
     private void HandleManualRead()
     {
         //prompt player to find enemies
-        manualController.PromptPlayer("Find the cancer cell", false);
+        manualController.PromptPlayer("Find the red cancer cell", false);
     }
 
     private void HandleLevelStarting()
@@ -139,7 +140,7 @@ public class LevelManager : MonoBehaviour
             if(allLumpsKilled)
             {
                 isLevelComplete = true;
-                manualController.PromptPlayer("Go to next body part", false);
+                manualController.PromptPlayer("Go to back to tube, and enter the lungs", false);
                 OnLevelComplete?.Invoke();
             }
         }

@@ -29,4 +29,9 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         LevelLoader.Instance.LoadLevel(SceneNames.MainMenu);
     }
+
+    public void OnBeginGame()
+    {
+        LevelLoader.Instance.LoadLevel(SceneNames.Testicle);
+    }
 }

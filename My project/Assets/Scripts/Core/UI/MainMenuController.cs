@@ -8,7 +8,7 @@ public class MainMenuController : MonoBehaviour
     public GameObject credits;
     public void OnPlayClick()
     {
-        SceneManager.LoadScene("Testicle");
+        SceneManager.LoadScene("IntroScene");
     }
 
     public void OnExitGameClick()
