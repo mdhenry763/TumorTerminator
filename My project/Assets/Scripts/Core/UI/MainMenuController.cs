@@ -7,7 +7,7 @@ public class MainMenuController : MonoBehaviour
 {
     public void OnPlayClick()
     {
-        //SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Testicle");
     }
 
     public void OnExitGameClick()
@@ -20,7 +20,7 @@ public class MainMenuController : MonoBehaviour
         //SceneManager.LoadScene("CancerInfo");
     }
 
-    public void OnReferencesClick()
+    public void OnCreditsClick()
     {
         //SceneManager.LoadScene("References");
     }

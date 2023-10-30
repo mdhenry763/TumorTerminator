@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: de29438fdef5aef4883ace6433727992
+guid: 491ed8835d4c0644fbf9e8f605db7351
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -49,7 +49,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 247, y: 619, z: 247, w: 578}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -69,19 +69,6 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -162,13 +149,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LoveNurs_Settings_Button_0
+      name: LoveNuts_Logo_Name_01_0
       rect:
         serializedVersion: 2
-        x: 311
-        y: 427
-        width: 1305
-        height: 234
+        x: 258
+        y: 634
+        width: 1482
+        height: 742
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,8 +163,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a81c0db91be9bc4428ea80897ed2ee8c
-      internalID: 1514507638
+      spriteID: b0b8fe9a611fbe74db538cbd4a72a748
+      internalID: 311566268
       vertices: []
       indices: 
       edges: []
@@ -185,15 +172,15 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: b7d0ee4d9b04942419bf733e2be1cbfe
-    internalID: 0
+    spriteID: 6cd3478b2c681214b88a2d5d6eba4f10
+    internalID: -313720691
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      LoveNurs_Settings_Button_0: 1514507638
+      LoveNuts_Logo_Name_01_0: 311566268
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

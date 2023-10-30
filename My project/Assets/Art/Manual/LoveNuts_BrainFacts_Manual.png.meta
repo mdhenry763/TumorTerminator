@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: de29438fdef5aef4883ace6433727992
+guid: 34a3a298b2efe954faab080464f5e522
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -81,19 +81,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -162,13 +149,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LoveNurs_Settings_Button_0
+      name: LoveNuts_BrainFacts_Manual_0
       rect:
         serializedVersion: 2
-        x: 311
-        y: 427
-        width: 1305
-        height: 234
+        x: 462
+        y: 70
+        width: 781
+        height: 992
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,8 +163,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a81c0db91be9bc4428ea80897ed2ee8c
-      internalID: 1514507638
+      spriteID: 47ca5a81ed2812e4e9e5fa8dfeea3170
+      internalID: -1505976941
       vertices: []
       indices: 
       edges: []
@@ -185,7 +172,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: b7d0ee4d9b04942419bf733e2be1cbfe
+    spriteID: afafcc153678f2f41ab782a76990ba3a
     internalID: 0
     vertices: []
     indices: 
@@ -193,7 +180,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      LoveNurs_Settings_Button_0: 1514507638
+      LoveNuts_BrainFacts_Manual_0: -1505976941
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
