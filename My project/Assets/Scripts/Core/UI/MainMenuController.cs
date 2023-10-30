@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
+    public GameObject credits;
     public void OnPlayClick()
     {
         SceneManager.LoadScene("Testicle");
@@ -22,7 +23,12 @@ public class MainMenuController : MonoBehaviour
 
     public void OnCreditsClick()
     {
-        //SceneManager.LoadScene("References");
+        credits.SetActive(true);
+    }
+
+    public void OnCreditsBackClick()
+    {
+        credits.SetActive(false);
     }
 
 
