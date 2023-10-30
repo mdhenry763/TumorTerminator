@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public enum LevelStage
@@ -18,6 +19,7 @@ public class LevelManager : MonoBehaviour
 
     [Header("Level Managemenet")]
     [SerializeField] private LevelSO[] levelSettings;
+    [SerializeField] private TMP_Text cancerCellsText;
 
     [Header("References")]
     [SerializeField] private TesticleManualController manualController;
@@ -46,6 +48,11 @@ public class LevelManager : MonoBehaviour
         numLumpsKilled = 0;
         numCancerCellsKilled = 0;
         cancerCellsInLevel = enemyManager.GetNumCancerCells();
+        if(cancerCellsText)
+        {
+            cancerCellsText.text = $"Cancer Cells Left: {cancerCellsInLevel}";
+        }
+        
     }
 
     //
@@ -86,6 +93,12 @@ public class LevelManager : MonoBehaviour
         //Check how many lumps left
         numLumpsKilled++;
         Debug.Log("Lump Killed");
+        int left = cancerCellsInLevel - numLumpsKilled;
+        if (cancerCellsText)
+        {
+            cancerCellsText.text = $"Cancer Cells Left: {left.ToString()}";
+        }
+        
 
         if(numLumpsKilled >= cancerCellsInLevel)
         {
