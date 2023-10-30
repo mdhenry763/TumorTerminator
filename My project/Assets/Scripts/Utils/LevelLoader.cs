@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public enum SceneNames
 { 
     MainMenu,
-    Intro,
+    IntroScene,
     Testicle,
     Lungs,
     Brain

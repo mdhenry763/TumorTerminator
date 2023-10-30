@@ -159,8 +159,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.342}
   m_AnchorMin: {x: 0.1, y: 0.1}
   m_AnchorMax: {x: 0.9, y: 0.9}
-  m_AnchoredPosition: {x: -34, y: 238}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 22, y: 196}
+  m_SizeDelta: {x: 1840.7563, y: -271.643}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &35997352
 MonoBehaviour:
@@ -182,7 +182,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 373110188, guid: 1f5f3ba75f5458e4a81887593000a88a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a707ecc78d45f64498ee0862752a2e4c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -396,7 +396,7 @@ Transform:
   m_GameObject: {fileID: 153682875}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.79, y: 3.98, z: -58.19}
+  m_LocalPosition: {x: -38.4, y: 3.98, z: -88.2}
   m_LocalScale: {x: 4.739, y: 4.6322937, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -421,8 +421,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 10.65, y: 10.16, z: 0.15357322}
-  m_Center: {x: 0.0053157806, y: 0, z: 0.4232134}
+  m_Size: {x: 43.251637, y: 10.16, z: 210.94725}
+  m_Center: {x: 9.214388, y: 0, z: 87.239235}
 --- !u!114 &153682878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1880,7 +1880,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 617, y: -323}
+  m_AnchoredPosition: {x: 350, y: -222}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1084825333
