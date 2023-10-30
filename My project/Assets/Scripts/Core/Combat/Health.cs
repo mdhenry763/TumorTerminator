@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [SerializeField] private GameObject deathScreen;
+
     [field: SerializeField] public int MaxHealth { get; private set; } = 100;
     [field: SerializeField] public int CurrentHealth { get; private set; } = 100;
 
@@ -35,6 +37,10 @@ public class PlayerHealth : MonoBehaviour
         if(CurrentHealth <= 0 ) 
         {
             OnDie?.Invoke(this);
+            if(deathScreen != null)
+            {
+                deathScreen.SetActive(true);
+            }
             isDead = true;
         }
     }

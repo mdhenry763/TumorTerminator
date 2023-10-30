@@ -140,7 +140,7 @@ public class LevelManager : MonoBehaviour
             if(allLumpsKilled)
             {
                 isLevelComplete = true;
-                manualController.PromptPlayer("Go to back to tube, and enter the lungs", false);
+                manualController.PromptPlayer("Go to start area", false);
                 OnLevelComplete?.Invoke();
             }
         }

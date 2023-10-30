@@ -34,7 +34,7 @@ public class SceneEnd : MonoBehaviour
         {
             if(other.CompareTag("Player"))
             {
-                LevelLoader.Instance.LoadNextScene();
+                LevelLoader.Instance.LoadLevel(SceneNames.IntroScene);
             }
 
         }

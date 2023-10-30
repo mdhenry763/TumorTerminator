@@ -30,6 +30,16 @@ public class PauseMenu : MonoBehaviour
         LevelLoader.Instance.LoadLevel(SceneNames.MainMenu);
     }
 
+    public void LoadLevel(string levelName)
+    {
+        SceneManager.LoadScene(levelName);
+    }
+
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     public void OnBeginGame()
     {
         LevelLoader.Instance.LoadLevel(SceneNames.Testicle);
